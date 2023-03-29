@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Project.Controllers.UserPage"
+             NavigationPage.HasNavigationBar="False">
+    <ContentPage.Content>
+        <Grid Padding="0,10,0,0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <StackLayout Grid.Row="0">
+
+                <ListView x:Name="listTasks" RowHeight="50" ItemSelected="listTasks_ItemSelected">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <StackLayout VerticalOptions="FillAndExpand" Padding="10, 0, 10, 0">
+                                    <Label Text="{Binding uId}" FontSize="17"/>
+
+                                    <StackLayout Orientation="Horizontal">
+                                        <Label Text="{Binding name}" HorizontalOptions="StartAndExpand"/>
+                                        
+                                    </StackLayout>
+
+                                </StackLayout>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </StackLayout>
+
+
+            <StackLayout Grid.Row="1" BackgroundColor="Black" VerticalOptions="FillAndExpand">
+                <BoxView BackgroundColor="Black" HeightRequest="5"/>
+                <Frame CornerRadius="10" Margin="5,0,5,0">
+                    <StackLayout Margin="5,0,5,0">
+                        <Entry x:Name="txtTaskId" Text="" Placeholder="Enter task"/>
+                        <Entry x:Name="txtTaskDecription" Text="" Placeholder="Decription"/>
+
+                        
+                    </StackLayout>
+                </Frame>
+
+                <Button x:Name="btnAddTask" Text="Add Task" BackgroundColor="Aqua" CornerRadius="10" Clicked="btnAddTask_Clicked" Margin="5,0,5,0"/>
+                <Button x:Name="btnLogout" Text="Logout" BackgroundColor="Aqua" CornerRadius="10" Clicked="btnLogout_Clicked" Margin="5,0,5,0"/>
+
+            </StackLayout>   
+            
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

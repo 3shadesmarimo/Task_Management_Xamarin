@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Project.MainPage"
+             NavigationPage.HasNavigationBar="False">
+
+    <StackLayout>
+        <Frame BackgroundColor="#2196F3" Padding="24" CornerRadius="0">
+            <Label Text="Project!" HorizontalTextAlignment="Center" TextColor="White" FontSize="36"/>
+        </Frame>
+
+        <StackLayout Spacing="30" VerticalOptions="CenterAndExpand" Margin="10,0,10,0">
+
+            <StackLayout>
+                <Entry x:Name="txtUsername" Placeholder="Email" HorizontalOptions="FillAndExpand"/>
+                
+            </StackLayout>
+
+            <StackLayout>
+                <Entry x:Name="txtPassword" Placeholder="Password" HorizontalOptions="FillAndExpand" IsPassword="True"/>
+            </StackLayout>
+            
+        </StackLayout>
+
+        <StackLayout Margin="10,0,10,0">
+            <Button x:Name="btnLogin" Text="Login" BackgroundColor="Aqua" TextColor="White" FontSize="20" CornerRadius="10" Clicked="btnLogin_Clicked"/>
+            <Button x:Name="btnSignUp" Text="SignUp" TextColor="Blue" BackgroundColor="Transparent" FontSize="18" Clicked="btnSignUp_Clicked"/>
+            <Label x:Name="lblResponse"/>
+        </StackLayout>
+       
+    </StackLayout>
+
+</ContentPage>
