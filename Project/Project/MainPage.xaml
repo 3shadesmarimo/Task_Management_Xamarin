@@ -6,7 +6,7 @@
 
     <StackLayout>
         <Frame BackgroundColor="#2196F3" Padding="24" CornerRadius="0">
-            <Label Text="Project!" HorizontalTextAlignment="Center" TextColor="White" FontSize="36"/>
+            <Label Text="Task Management App" HorizontalTextAlignment="Center" TextColor="White" FontSize="36"/>
         </Frame>
 
         <StackLayout Spacing="30" VerticalOptions="CenterAndExpand" Margin="10,0,10,0">
@@ -23,7 +23,7 @@
         </StackLayout>
 
         <StackLayout Margin="10,0,10,0">
-            <Button x:Name="btnLogin" Text="Login" BackgroundColor="Aqua" TextColor="White" FontSize="20" CornerRadius="10" Clicked="btnLogin_Clicked"/>
+            <Button x:Name="btnLogin" Text="Login" BackgroundColor="DodgerBlue" TextColor="White" FontSize="20" CornerRadius="10" Clicked="btnLogin_Clicked"/>
             <Button x:Name="btnSignUp" Text="SignUp" TextColor="Blue" BackgroundColor="Transparent" FontSize="18" Clicked="btnSignUp_Clicked"/>
             <Label x:Name="lblResponse"/>
         </StackLayout>

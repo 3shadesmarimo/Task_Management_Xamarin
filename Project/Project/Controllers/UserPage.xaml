@@ -4,50 +4,37 @@
              x:Class="Project.Controllers.UserPage"
              NavigationPage.HasNavigationBar="False">
     <ContentPage.Content>
-        <Grid Padding="0,10,0,0">
-            <Grid.RowDefinitions>
-                <RowDefinition Height="*"/>
-                <RowDefinition Height="*"/>
-            </Grid.RowDefinitions>
 
-            <StackLayout Grid.Row="0">
+        <StackLayout>
+            <ListView x:Name="UsersListView"
+                  HasUnevenRows="True">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout Padding="10">
 
-                <ListView x:Name="listTasks" RowHeight="50" ItemSelected="listTasks_ItemSelected">
-                    <ListView.ItemTemplate>
-                        <DataTemplate>
-                            <ViewCell>
-                                <StackLayout VerticalOptions="FillAndExpand" Padding="10, 0, 10, 0">
-                                    <Label Text="{Binding uId}" FontSize="17"/>
+                                <Label Text="{Binding Name}" FontAttributes="Bold"/>
+                                <Label Text="{Binding Email}"/>
+                                <Label Text="{Binding UId}"/>
 
-                                    <StackLayout Orientation="Horizontal">
-                                        <Label Text="{Binding name}" HorizontalOptions="StartAndExpand"/>
-                                        
-                                    </StackLayout>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
 
-                                </StackLayout>
-                            </ViewCell>
-                        </DataTemplate>
-                    </ListView.ItemTemplate>
-                </ListView>
+            <StackLayout>
+                <Label x:Name="lbl" TextColor="Black"/>
+                <Button x:Name="btnCreate" Text="Create Task" TextColor="White" BackgroundColor="DodgerBlue" CornerRadius="10" Clicked="btnCreate_Clicked"/>
+                <Button x:Name="btnGetTasks" Text="Tasks Created" TextColor="White" BackgroundColor="DodgerBlue" CornerRadius="10" Clicked="btnGetTasks_Clicked"/>
+                <Button x:Name="btnTasksAss" Text="Tasks Assigned To Me" TextColor="White" BackgroundColor="DodgerBlue" CornerRadius="10" Clicked="btnTasksAss_Clicked"/>
+                <Button x:Name="btnLogOut" Text="Logout" TextColor="Black" BackgroundColor="Transparent" CornerRadius="10" Clicked="btnLogOut_Clicked"/>
+                            
             </StackLayout>
-
-
-            <StackLayout Grid.Row="1" BackgroundColor="Black" VerticalOptions="FillAndExpand">
-                <BoxView BackgroundColor="Black" HeightRequest="5"/>
-                <Frame CornerRadius="10" Margin="5,0,5,0">
-                    <StackLayout Margin="5,0,5,0">
-                        <Entry x:Name="txtTaskId" Text="" Placeholder="Enter task"/>
-                        <Entry x:Name="txtTaskDecription" Text="" Placeholder="Decription"/>
-
-                        
-                    </StackLayout>
-                </Frame>
-
-                <Button x:Name="btnAddTask" Text="Add Task" BackgroundColor="Aqua" CornerRadius="10" Clicked="btnAddTask_Clicked" Margin="5,0,5,0"/>
-                <Button x:Name="btnLogout" Text="Logout" BackgroundColor="Aqua" CornerRadius="10" Clicked="btnLogout_Clicked" Margin="5,0,5,0"/>
-
-            </StackLayout>   
             
-        </Grid>
+        </StackLayout>
+
+        
+
     </ContentPage.Content>
 </ContentPage>

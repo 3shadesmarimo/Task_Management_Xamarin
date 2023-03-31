@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -6,29 +7,25 @@ namespace Project.Models
 {
     public class TaskModel
     {
-        public TaskModel(string taskUid, string assignedToName, string assignedToUid, string createdByName, string createdByUid, string description, bool done)
-        {
-            this.taskUid = taskUid;
-            this.assignedToName = assignedToName;
-            this.assignedToUid = assignedToUid;
-            this.createdByName = createdByName;
-            this.createdByUid = createdByUid;
-            this.description = description;
-            this.done = done;
-        }
+        [JsonProperty("taskUid")]
+        public string TaskUid { get; set; }
 
-        public string taskUid { get; set; }
+        [JsonProperty("description")]
+        public string Description { get; set; }
 
-        public string assignedToName { get; set; }
-        
-        public string assignedToUid { get; set; }
+        [JsonProperty("createdByUid")]
+        public string CreatedByUid { get; set; }
 
-        public string createdByName { get; set; }
+        [JsonProperty("createdByName")]
+        public string CreatedByName { get; set; }
 
-        public string createdByUid { get; set; }
+        [JsonProperty("assignedToUid")]
+        public string AssignedToUid { get; set; }
 
-        public string description { get; set; }
+        [JsonProperty("assignedToName")]
+        public string AssignedToName { get; set; }
 
-        public bool done { get; set; }
+        [JsonProperty("done")]
+        public bool Done { get; set; }
     }
 }

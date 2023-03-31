@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Project.Controllers.CreateTasksCreatedBy">
+    <ContentPage.Content>
+        <StackLayout Margin="20">
+            <ListView x:Name="TasksCreatedByListView"
+                      HasUnevenRows="True"
+                      SelectionMode="Single"
+                      IsEnabled="True"
+                      ItemSelected="TasksCreatedByListView_ItemSelected"
+                      >
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout>
+                                <Label Text="{Binding Description}" FontAttributes="Bold"/>
+                                <Label Text="{Binding CreatedByName}" FontSize="Small"/>
+                                <Label Text="{Binding AssignedToName}" FontSize="Small"/>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+
+            <Button x:Name="btnDelete" Text="Delete Task" TextColor="White" BackgroundColor="DodgerBlue" CornerRadius="10" Clicked="btnDelete_Clicked"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

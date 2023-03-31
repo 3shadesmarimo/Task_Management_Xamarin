@@ -69,7 +69,12 @@ namespace Project
                 var responseBody = await response.Content.ReadAsStringAsync();
                 var responseDict = JsonConvert.DeserializeObject<Dictionary<string, object>>(responseBody);
 
-                
+                if (responseDict.TryGetValue("token", out object tokenValue))
+                {
+                    Application.Current.Properties["token"] = tokenValue.ToString();
+                    await Application.Current.SavePropertiesAsync(); // Save the token persistently
+                }
+                //lblResponse.Text = responseDict.ToString();
                 return responseDict;
             }
 

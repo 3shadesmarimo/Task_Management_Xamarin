@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -6,17 +7,10 @@ namespace Project.Models
 {
     public class UserModel
     {
-        public UserModel(string uId, string name, string password)
-        {
-            this.uId = uId;
-            this.name = name;
-            this.password = password;
-        }
 
-        public string uId { get; set; }
-        public string name { get; set; }
-
-        public string password { get; set; }
+        public string UId { get; set; }
+        public string Name { get; set; }
+        public string Email { get; set; }
 
     }
 }

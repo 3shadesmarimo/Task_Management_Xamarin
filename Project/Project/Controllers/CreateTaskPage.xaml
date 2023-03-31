@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Project.Controllers.CreateTaskPage">
+    <ContentPage.Content>
+        <StackLayout Margin="20">
+            <Entry x:Name="TaskTitleEntry"
+                
+                Placeholder="Task Title" />
+          
+            <Label Text="Assign To:" />
+            <Picker x:Name="AssignedToPicker"
+                Title="Select a user" />
+            <Button x:Name="CreateTaskButton"
+                Text="Create Task" BackgroundColor="DodgerBlue"
+                Clicked="CreateTaskButton_Clicked" />
+
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
