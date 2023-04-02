@@ -6,7 +6,7 @@
         <StackLayout Margin="20">
             <Entry x:Name="TaskTitleEntry"
                 
-                Placeholder="Task Title" />
+                Placeholder="Task Description" />
           
             <Label Text="Assign To:" />
             <Picker x:Name="AssignedToPicker"

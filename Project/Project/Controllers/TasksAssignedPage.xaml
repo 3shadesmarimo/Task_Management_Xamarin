@@ -3,10 +3,52 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Project.Controllers.TasksAssignedPage">
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+        <StackLayout Margin="20">
+            <ListView x:Name="TaskAssignedListView"
+                  HasUnevenRows="True"
+                  SelectionMode="Single"
+                  IsEnabled="True"
+                  ItemSelected="TaskAssignedListView_ItemSelected">
+
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout Orientation="Horizontal">
+                                <StackLayout Padding="30">
+                                    <Label>
+                                        <Label.FormattedText>
+                                            <FormattedString>
+                                                <Span Text="Assigned To:  " FontAttributes="Bold"/>
+                                                <Span Text="{Binding AssignedToName}"/>
+                                            </FormattedString>
+                                        </Label.FormattedText>
+                                    </Label>
+                                    <Label>
+                                        <Label.FormattedText>
+                                            <FormattedString>
+                                                <Span Text="Created By:  " FontAttributes="Bold"/>
+                                                <Span Text="{Binding CreatedByName}" FontSize="Small"/>
+                                            </FormattedString>
+                                        </Label.FormattedText>
+                                    </Label>
+                                    <Label>
+                                        <Label.FormattedText>
+                                            <FormattedString>
+                                                <Span Text="Task Description:  " FontAttributes="Bold"/>
+                                                <Span Text="{Binding Description}" FontSize="Small"/>
+                                            </FormattedString>
+                                        </Label.FormattedText>
+                                    </Label>
+                                    
+                                </StackLayout>
+                                <Switch IsToggled="{Binding Done}" Toggled="Switch_Toggled"/>   
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+            <Button x:Name="btnSave" Text="Update Assigned Tasks" TextColor="White" BackgroundColor="DodgerBlue" CornerRadius="10" Clicked="btnSave_Clicked"/>
         </StackLayout>
     </ContentPage.Content>
+
 </ContentPage>

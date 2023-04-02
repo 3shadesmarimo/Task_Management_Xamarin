@@ -41,7 +41,7 @@ namespace Project
             if (result != null)
             {
                 // Handle successful login here
-                await Navigation.PushAsync(new UserPage());
+                await Navigation.PushAsync(new UserPage(email));
             }
             else
             {

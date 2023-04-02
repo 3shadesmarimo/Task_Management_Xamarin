@@ -6,16 +6,39 @@
     <ContentPage.Content>
 
         <StackLayout>
+
+            <Label x:Name="WelcomeLabel"
+                   FontSize="Large"
+                   FontAttributes="Bold"
+                   HorizontalOptions="Center"
+                   VerticalOptions="Start"
+                   TextColor="Black"/>
+
             <ListView x:Name="UsersListView"
                   HasUnevenRows="True">
+                
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>
                             <StackLayout Padding="10">
+                                <Label>
+                                    <Label.FormattedText>
+                                        <FormattedString>
+                                            <Span Text="Name:  " FontAttributes="Bold"/>
+                                            <Span Text="{Binding Name}" TextColor="Black"/>
+                                        </FormattedString>
+                                    </Label.FormattedText>
+                                </Label>
 
-                                <Label Text="{Binding Name}" FontAttributes="Bold"/>
-                                <Label Text="{Binding Email}"/>
-                                <Label Text="{Binding UId}"/>
+                                <Label>
+                                    <Label.FormattedText>
+                                        <FormattedString>
+                                            <Span Text="Email:  " FontAttributes="Bold"/>
+                                            <Span Text="{Binding Email}" TextColor="Black"/>
+                                        </FormattedString>
+                                    </Label.FormattedText>
+                                </Label>
+                                
 
                             </StackLayout>
                         </ViewCell>
@@ -23,7 +46,7 @@
                 </ListView.ItemTemplate>
             </ListView>
 
-            <StackLayout>
+            <StackLayout Margin="15" Padding="10" Spacing="5">
                 <Label x:Name="lbl" TextColor="Black"/>
                 <Button x:Name="btnCreate" Text="Create Task" TextColor="White" BackgroundColor="DodgerBlue" CornerRadius="10" Clicked="btnCreate_Clicked"/>
                 <Button x:Name="btnGetTasks" Text="Tasks Created" TextColor="White" BackgroundColor="DodgerBlue" CornerRadius="10" Clicked="btnGetTasks_Clicked"/>

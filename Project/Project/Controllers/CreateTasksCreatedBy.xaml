@@ -13,11 +13,44 @@
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>
-                            <StackLayout>
-                                <Label Text="{Binding Description}" FontAttributes="Bold"/>
-                                <Label Text="{Binding CreatedByName}" FontSize="Small"/>
-                                <Label Text="{Binding AssignedToName}" FontSize="Small"/>
+                            <StackLayout Orientation="Horizontal">
+                                <StackLayout Padding="30">
+                                    <Label>
+                                        <Label.FormattedText>
+                                            <FormattedString>
+                                                <Span Text="Assigned To:  " FontAttributes="Bold"/>
+                                                <Span Text="{Binding AssignedToName}"/>
+                                            </FormattedString>
+                                        </Label.FormattedText>
+                                    </Label>
+                                    <Label>
+                                        <Label.FormattedText>
+                                            <FormattedString>
+                                                <Span Text="Created By:  " FontAttributes="Bold"/>
+                                                <Span Text="{Binding CreatedByName}" FontSize="Small"/>
+                                            </FormattedString>
+                                        </Label.FormattedText>
+                                    </Label>
+                                    <Label>
+                                        <Label.FormattedText>
+                                            <FormattedString>
+                                                <Span Text="Task Description:  " FontAttributes="Bold"/>
+                                                <Span Text="{Binding Description}" FontSize="Small"/>
+                                            </FormattedString>
+                                        </Label.FormattedText>
+                                    </Label>
+                                    <Label>
+                                        <Label.FormattedText>
+                                            <FormattedString>
+                                                <Span Text="Status:  " FontAttributes="Bold"/>
+                                                <Span Text="{Binding Done}" FontSize="Small"/>
+                                            </FormattedString>
+                                        </Label.FormattedText>
+                                    </Label>
+
+                                </StackLayout>
                             </StackLayout>
+                            
                         </ViewCell>
                     </DataTemplate>
                 </ListView.ItemTemplate>

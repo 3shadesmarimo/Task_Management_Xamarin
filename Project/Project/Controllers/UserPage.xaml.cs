@@ -19,11 +19,12 @@ namespace Project.Controllers
     public partial class UserPage : ContentPage
     {
         public ObservableCollection<UserModel> Users { get; set; } = new ObservableCollection<UserModel>();
-        public UserPage()
+        public UserPage(string userEmail)
         {
             InitializeComponent();
             UsersListView.ItemsSource = Users;
             LoadUsersAsync();
+            WelcomeLabel.Text = $"Welcome {userEmail}!";
         }
 
         public class ApiResponse
